@@ -1,0 +1,74 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE")
+        classpath "org.flywaydb:flyway-gradle-plugin:3.2.1"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'org.flywaydb.flyway'
+
+jar {
+    baseName = 'neo-api'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+dependencies {
+    /* Jetty config - START */
+    compile("org.springframework.boot:spring-boot-starter-web") {
+        exclude module: "spring-boot-starter-tomcat"
+    }
+    compile("org.springframework.boot:spring-boot-starter-jetty")
+    /* Jetty config - END */
+
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-data-rest')
+    compile('org.springframework.boot:spring-boot-starter-hateoas')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+
+    compile("org.webjars:bootstrap:3.2.0")
+    compile("org.webjars:jquery:2.1.1")
+
+    compile 'org.apache.commons:commons-dbcp2:2.1.1'
+    compile "mysql:mysql-connector-java:5.1.37"
+
+    compile 'joda-time:joda-time:2.9'
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile('commons-io:commons-io:2.4')
+    compile('net.coobird:thumbnailator:0.4.8')
+    compile('com.google.guava:guava:18.0')
+    compile('com.googlecode.juniversalchardet:juniversalchardet:1.0.3')
+
+    compile('commons-net:commons-net:3.4')
+
+    compile("io.springfox:springfox-swagger2:2.0.2")
+    compile("io.springfox:springfox-swagger-ui:2.0.2")
+
+    testCompile("junit:junit")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+flyway {
+    url = 'jdbc:h2:file:target/springboot'
+    user = 'sa'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.7'
+}

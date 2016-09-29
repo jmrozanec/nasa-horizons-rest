@@ -1,0 +1,3 @@
+create table neos(id int primary key, name varchar(15), epoc int, a decimal(15,10), e decimal(15,10), i decimal(15,10), w decimal(15,10), node decimal(15,10), m decimal(15,10), qp decimal(15,10), qa decimal(15,10), p decimal(15,10), h decimal(15,10), moid decimal(15,10), ref int(6),  class varchar(50));
+
+LOAD DATA INFILE 'resources/complete-listing-excel.csv' INTO TABLE neos FIELDS TERMINATED BY ',' IGNORE 1 LINES;

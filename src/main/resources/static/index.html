@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="si" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>NASA NEO</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"/>
+
+    <!-- materializedcss.com -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- x-editable cdn: http://cdnjs.com/libraries/x-editable -->
+    <!--link href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet"-->
+    <!-- custom -->
+    <link rel="stylesheet" href="/css/footer.css"/>
+    <link rel="stylesheet" href="/css/navbarform.css"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="body">
+<nav class="navbar navbar-default" role="navigation" id="nav">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <a class="navbar-brand" href="https://2016.spaceappschallenge.org/challenges/solar-system/near-earth-objects-machine-learning" target="_blank">NASA NEO</a>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="menu-navbar-collapse" id="tabs">
+        <!--centered as described here: http://www.bootply.com/98314 -->
+
+        <!--Must be after search form, since otherwise width:100% covers the button and prevents clicks-->
+        <ul class="nav navbar-nav navbar-left nav-pills" id="lefttabs">
+            <li><a href='' data-i18n="app.restdocs" data-toggle="lefttab"></a></li>
+        </ul>
+    </div>
+</nav>
+<main>
+    <div id="content">
+        <ul class="collection">
+            <li class="collection-item avatar">
+                <img src="images/asteroids.png" alt="asteroids" class="circle">
+                <span class="title">Accessibility of NEO data: REST APIs to feed our Skynet.</span>
+                <br>
+                <b>Problems identified: </b><br>
+                - Most data was not available in a machine readable / accessible format<br>
+                <b>Our contribution: </b><br>
+                - Extracted data in HTML tables into a database.<br>
+                - Interfaced NASA's <a href="http://ssd.jpl.nasa.gov/?horizons">HORIZONS System</a> telnet client, to provide functionality missing at web interface and make orbital information widely accessible.<br>
+                - Exposed this information with a <a href="/swagger-ui.html">REST client</a>
+            </li>
+        </ul>
+    </div>
+</main>
+
+<footer class="page-footer grey lighten-5">
+    <div class="footer-copyright grey lighten-3" id="footercontent">
+        <p class="text-muted">
+            Developed as part of the 2016 NASA
+            <a href="https://2016.spaceappschallenge.org" data-i18n="app.challenge" target="_blank">Space App Challenge</a>
+        </p>
+    </div>
+</footer>
+
+<!--Best practice to speedup rendering: https://developer.yahoo.com/performance/rules.html#js_bottom-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<!-- materializedcss.com -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+<!-- xeditable -->
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap-editable/js/bootstrap-editable.min.js"></script-->
+<!-- custom -->
+
+<!--jquery form taken from: https://malsup.github.com-->
+<script src="/js/i18next-1.11.0.min.js"></script>
+</body>
+
+</html>

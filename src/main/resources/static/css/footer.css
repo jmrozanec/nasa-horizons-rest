@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+}
+
+#footercontent {
+    text-align: center;
+}
+
+.pagination-label {
+    min-width: 100px;
+    display: inline-block;
+}
+
+.page-div {
+    text-align:center;
+}
+
+footer.page-footer {
+    margin-top: 0px;
+    padding-top: 0px;
+}

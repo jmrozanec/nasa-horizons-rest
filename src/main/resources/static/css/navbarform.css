@@ -1,0 +1,21 @@
+.navbar-form {
+    margin-top: initial;/* to avoid placing search a few pixels lower */
+}
+
+/*Trick to get greetting / not signed text at same level as login*/
+#signedasli{
+    pointer-events: none !important;
+}
+#signedasli:hover {
+    background-color: transparent;
+}
+
+/*Center brand*/
+.navbar-brand{
+    text-align: centered;
+}
+
+/*to avoid separation between main content and nav*/
+.navbar{
+    margin-bottom: 0px;
+}
